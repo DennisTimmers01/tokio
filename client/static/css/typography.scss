@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Lato');
+
+$baseFontSize: 18px;
+$bodyLineHeight: 1.5;
+$headerLineHeight: 1.3;
+
+$headerFont: 'Fjalla One', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+html,
+body {
+  font-family: $bodyFont;
+  font-size: $baseFontSize;
+  line-height: $bodyLineHeight;
+  color: $blackColor;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $headerFont;
+  line-height: $headerLineHeight;
+  color: $primaryColor;
+}
+
+h1 { font-size: 1.85em; }
+h2 { font-size: 1.6em;  }
+h3 { font-size: 1.4em;  }
+h4 { font-size: 1.3em;  }
+h5 { font-size: 1.25em; }
+
+.count-down {
+  font-family: $headerFont;
+  font-size: 25vw;
+  line-height: 1;
+
+  &__text {
+    color: transparentize($primaryColor, .95);
+  }
+
+  &__clock {
+    color: transparentize($blackColor, .9);
+  }
+}
+
+.product {
+  &__brand {
+    color: $blackColor;
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__price {
+    font-family: $headerFont;
+    line-height: $headerLineHeight;
+    font-size: 1.4em;
+    color: $blackColor;
+  }
+}
+
+@media screen and (min-width: 32em) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
