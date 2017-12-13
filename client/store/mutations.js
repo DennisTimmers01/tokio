@@ -14,7 +14,10 @@ const selectPreviousItem = (state) => {
   }
 }
 
+const toggleDetailed = (state) => (state.isDetailed = !state.isDetailed)
+
 export {
   selectNextItem,
-  selectPreviousItem
+  selectPreviousItem,
+  toggleDetailed
 }

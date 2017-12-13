@@ -1,5 +1,6 @@
 const state = {
   activeItem: 0,
+  isDetailed: false,
   products: [
     {
       id: 0,

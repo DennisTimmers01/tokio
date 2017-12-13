@@ -1,8 +1,11 @@
 <template>
-    <div class="product" v-touch:swipe="swipeHandler">
+    <div
+      :class="['product', isDetailed ? 'product--detailed' : '']"
+      v-touch:swipe="swipeHandler"
+    >
       <img src='../static/images/bag.png' alt="Product image" class="product__image">
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
-      <h1 class="product__title">{{activeProduct.title}}</h1>
+      <h1 v-on:click="toggleDetailed" class="product__title">{{activeProduct.title}}</h1>
       <nuxt-link :to="`/${activeProduct.id}`">Details</nuxt-link>
       <nuxt-child :key="`/${activeProduct.id}`"></nuxt-child>
     </div>
@@ -13,12 +16,14 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapGetters([
-      'activeProduct'
+      'activeProduct',
+      'isDetailed'
     ])
   },
   methods: {
     ...mapActions([
-      'swipeHandler'
+      'swipeHandler',
+      'toggleDetailed'
     ])
   }
 }
@@ -26,7 +31,8 @@ export default {
 
 <style lang='scss'>
   .product {
-    padding: 3em 1em 0 1em;
+    padding: 5em 1em 0 1em;
+    transition: all .7s ease-in-out;
 
     &__image {
       display: block;
@@ -37,5 +43,9 @@ export default {
     &__brand {
       padding: 2em 0 0;
     }
+  }
+
+  .product--detailed {
+    padding: 2em 1em 0 1em;
   }
 </style>

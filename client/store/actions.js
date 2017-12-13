@@ -9,6 +9,9 @@ const swipeHandler = (ctx, direction) => {
   }
 }
 
+const toggleDetailed = ctx => ctx.commit('toggleDetailed')
+
 export {
-  swipeHandler
+  swipeHandler,
+  toggleDetailed
 }
