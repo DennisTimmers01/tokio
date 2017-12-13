@@ -1,5 +1,5 @@
 <template>
-  <img src="../static/images/polkadot-Knit-Black.png" alt="next item" class="product__image product__image--next">
+  <img :src="nextProduct.img" alt="next item" class="product__image product__image--next">
 </template>
 
 <script>
@@ -8,6 +8,7 @@ export default {
   computed: {
     ...mapGetters([
       'activeProduct',
+      'nextProduct',
       'isDetailed'
     ])
   }

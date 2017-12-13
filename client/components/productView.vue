@@ -4,7 +4,7 @@
       v-touch:swipe="swipeHandler"
     >
       <product-previous v-show="!isDetailed"/>
-      <img src="../static/images/bag.png" alt="Product image" class="product__image product__image--active">
+      <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
       <product-next v-show="!isDetailed"/>
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
       <h1 class="product__title">{{activeProduct.title}}</h1>

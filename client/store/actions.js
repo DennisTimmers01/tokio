@@ -1,9 +1,9 @@
 const swipeHandler = (ctx, direction) => {
   switch (direction) {
-    case 'right':
+    case 'left':
       ctx.commit('selectNextItem')
       break
-    case 'left':
+    case 'right':
       ctx.commit('selectPreviousItem')
       break
   }
