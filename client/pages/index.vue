@@ -1,7 +1,7 @@
 <template>
   <main>
     <count-down-timer/>
-    <productView />
+    <productView/>
   </main>
 </template>
 

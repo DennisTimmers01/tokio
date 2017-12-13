@@ -4,7 +4,7 @@
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
       <h1 class="product__title">{{activeProduct.title}}</h1>
       <nuxt-link :to="`/${activeProduct.id}`">Details</nuxt-link>
-      <nuxt-child :key="$route.params.id"></nuxt-child>
+      <nuxt-child :key="`/${activeProduct.id}`"></nuxt-child>
     </div>
 </template>
 

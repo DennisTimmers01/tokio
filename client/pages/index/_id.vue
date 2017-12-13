@@ -1,5 +1,5 @@
 <template>
-  <product-detail></product-detail>
+  <productDetail/>
 </template>
 
 <script>
@@ -11,6 +11,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
