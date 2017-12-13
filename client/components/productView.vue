@@ -5,8 +5,17 @@
     >
       <img src='../static/images/bag.png' alt="Product image" class="product__image">
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
-      <h1 v-on:click="toggleDetailed" class="product__title">{{activeProduct.title}}</h1>
-      <nuxt-link :to="`/${activeProduct.id}`">Details</nuxt-link>
+      <h1 class="product__title">{{activeProduct.title}}</h1>
+      <nuxt-link 
+        v-if="!isDetailed"
+        @click.native="toggleDetailed" 
+        :to="`/${activeProduct.id}`">Details
+      </nuxt-link>
+      <nuxt-link 
+        v-else
+        @click.native="toggleDetailed"
+        :to="'/'">Back
+      </nuxt-link>
       <nuxt-child :key="`/${activeProduct.id}`"></nuxt-child>
     </div>
 </template>
