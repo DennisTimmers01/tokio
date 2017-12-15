@@ -32,14 +32,14 @@ const state = {
       brand: 'COMME des GARCONS PLAY',
       title: 'BLACK HEART POLKA DOT V-NECK KNIT',
       release: '24:02:01',
-      img: 'images/polkadot-Knit-Black.png'
+      img: 'images/bag.png'
     },
     {
       id: 4,
       brand: 'COMME des GARCONS PLAY',
       title: 'BLACK HEART POLKA DOT V-NECK KNIT',
       release: '24:02:01',
-      img: 'images/polkadot-Knit-Black.png'
+      img: 'images/fbt.png'
     },
     {
       id: 5,
@@ -53,14 +53,14 @@ const state = {
       brand: 'COMME des GARCONS PLAY',
       title: 'BLACK HEART POLKA DOT V-NECK KNIT',
       release: '24:02:01',
-      img: 'images/polkadot-Knit-Black.png'
+      img: 'images/bag.png'
     },
     {
       id: 7,
       brand: 'COMME des GARCONS PLAY',
       title: 'BLACK HEART POLKA DOT V-NECK KNIT',
       release: '24:02:01',
-      img: 'images/polkadot-Knit-Black.png'
+      img: 'images/fbt.png'
     }
   ]
 }
