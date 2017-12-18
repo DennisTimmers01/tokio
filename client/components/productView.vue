@@ -8,6 +8,7 @@
       <product-next v-show="!isDetailed"/>
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
       <h1 class="product__title">{{activeProduct.title}}</h1>
+      <nuxt-child/>
       <nuxt-link
         class="btn"
         @click.native="toggleDetailed"
@@ -28,13 +29,11 @@
 <script>
 import productPrevious from '~/components/productPrevious'
 import productNext from '~/components/productNext'
-import toggleDetailBtn from '~/components/common/toggleDetailBtn'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   components: {
     productPrevious,
-    productNext,
-    toggleDetailBtn
+    productNext
   },
   computed: {
     ...mapGetters([
