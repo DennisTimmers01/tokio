@@ -8,9 +8,20 @@
       <product-next v-show="!isDetailed"/>
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
       <h1 class="product__title">{{activeProduct.title}}</h1>
-      <toggle-detail-btn v-if="!isDetailed">Details</toggle-detail-btn>
-      <toggle-detail-btn v-else>Back</toggle-detail-btn>
-      <nuxt-child :key="`/${activeProduct.id}`"></nuxt-child>
+      <nuxt-link
+        class="btn"
+        @click.native="toggleDetailed"
+        :to="`/${activeProduct.id}`"
+        v-if="!isDetailed">
+        Details
+      </nuxt-link>
+      <nuxt-link
+        class="btn"
+        @click.native="toggleDetailed"
+        :to="'/'"
+        v-else>
+        Back
+      </nuxt-link>
     </div>
 </template>
 
@@ -64,10 +75,6 @@ export default {
         opacity: .5;
       }
     }
-
-    &__brand {
-      padding: 2em 0 0;
-    }
   }
 
   .product--detailed {
@@ -76,5 +83,12 @@ export default {
     .product__image {
       display: block;
     }
+  }
+
+  .btn {
+    display: block;
+    background: #0a0a0a;
+    padding: .5em 0;
+    width: 5em;
   }
 </style>

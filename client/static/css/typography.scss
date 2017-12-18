@@ -49,6 +49,11 @@ h5 { font-size: 1.25em; }
 
   &__title {
     margin: 0;
+    padding: .3em 0;
+  }
+
+  &__brand {
+    padding: 1em 0 0;
   }
 
   &__price {
@@ -58,6 +63,14 @@ h5 { font-size: 1.25em; }
     color: $blackColor;
   }
 }
+
+.btn {
+  line-height: 1;
+  text-decoration: none;
+  color: $whiteColor;
+  text-align: center;
+} 
+
 
 @media screen and (min-width: 32em) {
   html,
