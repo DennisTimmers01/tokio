@@ -1,20 +1,24 @@
 <template>
-    <div :class="['product', isDetailed ? 'product--detailed' : '']" v-touch:swipe="swipeHandler">
-      <product-previous v-show="!isDetailed"/>
-      <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
-      <product-next v-show="!isDetailed"/>
-      <h2 class="product__brand">{{activeProduct.brand}}</h2>
-      <h1 class="product__title">{{activeProduct.title}}</h1>
-      <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/${activeProduct.id}`" v-if="!isDetailed">
-        Details
-      </nuxt-link>
-      <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
-        Details
-      </nuxt-link>
-      <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/order`" v-if="!isDetailed">Order</nuxt-link>
-      <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
-        Order
-      </nuxt-link>
+    <div :class="['product', isDetailed ? 'product--detailed' : '']">
+      <div class="product__carousel" v-touch:swipe="swipeHandler">
+        <product-previous v-show="!isDetailed"/>
+        <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
+        <product-next v-show="!isDetailed"/>
+      </div>
+      <div class="product__info">
+        <h2 class="product__brand">{{activeProduct.brand}}</h2>
+        <h1 class="product__title">{{activeProduct.title}}</h1>
+        <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/${activeProduct.id}`" v-if="!isDetailed">
+          Details
+        </nuxt-link>
+        <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
+          Details
+        </nuxt-link>
+        <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/order`" v-if="!isDetailed">Order</nuxt-link>
+        <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
+          Order
+        </nuxt-link>
+      </div>
       <nuxt-child/>
     </div>
 </template>
@@ -87,5 +91,40 @@ export default {
     background: #0a0a0a;
     padding: .5em 0;
     width: 5em;
+  }
+
+  @media screen and (min-width: 32em) {
+    .product {
+      &__carousel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 50em;
+      }
+
+      &__image {
+        align-self: center;
+        max-width: 30%;
+
+        &--previous {
+          margin-left: 0;
+          max-width: 20%;
+          opacity: .5;
+        }
+
+        &--next {
+          margin-right: 0;
+          max-width: 20%;
+          opacity: .5;
+        }
+      }
+
+      &__info {
+        margin: 0 auto;
+        max-width: 30em;
+      }
+    }
   }
 </style>
