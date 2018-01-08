@@ -1,28 +1,21 @@
 <template>
-    <div
-      :class="['product', isDetailed ? 'product--detailed' : '']"
-      v-touch:swipe="swipeHandler"
-    >
+    <div :class="['product', isDetailed ? 'product--detailed' : '']" v-touch:swipe="swipeHandler">
       <product-previous v-show="!isDetailed"/>
       <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
       <product-next v-show="!isDetailed"/>
       <h2 class="product__brand">{{activeProduct.brand}}</h2>
       <h1 class="product__title">{{activeProduct.title}}</h1>
-      <nuxt-child/>
-      <nuxt-link
-        class="btn"
-        @click.native="toggleDetailed"
-        :to="`/${activeProduct.id}`"
-        v-if="!isDetailed">
+      <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/${activeProduct.id}`" v-if="!isDetailed">
         Details
       </nuxt-link>
-      <nuxt-link
-        class="btn"
-        @click.native="toggleDetailed"
-        :to="'/'"
-        v-else>
-        Back
+      <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
+        Details
       </nuxt-link>
+      <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/order`" v-if="!isDetailed">Order</nuxt-link>
+      <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
+        Order
+      </nuxt-link>
+      <nuxt-child/>
     </div>
 </template>
 
@@ -73,6 +66,11 @@ export default {
         max-width: 50%;
         opacity: .5;
       }
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0 1em 0 0;
     }
   }
 
