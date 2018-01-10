@@ -6,18 +6,20 @@ const activeProduct = state => state.products.find(product => product.id === sta
 const nextProduct = state => {
   if (state.activeItem === state.products.length - 1) {
     return state.products.find(product => product.id === 0)
-  } else {
-    return state.products.find(product => product.id === (state.activeItem + 1))
   }
+
+  return state.products.find(product => product.id === (state.activeItem + 1))
 }
 
 const previousProduct = state => {
   if (state.activeItem === 0) {
     return state.products.find(product => product.id === (state.products.length - 1))
-  } else {
-    return state.products.find(product => product.id === (state.activeItem - 1))
   }
+
+  return state.products.find(product => product.id === (state.activeItem - 1))
 }
+
+const newProducts = state => state.newProducts
 
 export {
   activeItem,
@@ -25,5 +27,6 @@ export {
   activeProduct,
   nextProduct,
   previousProduct,
-  isDetailed
+  isDetailed,
+  newProducts
 }

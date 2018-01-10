@@ -27,6 +27,7 @@
 import productPrevious from '~/components/productPrevious'
 import productNext from '~/components/productNext'
 import { mapGetters, mapActions } from 'vuex'
+
 export default {
   components: {
     productPrevious,
@@ -35,7 +36,8 @@ export default {
   computed: {
     ...mapGetters([
       'activeProduct',
-      'isDetailed'
+      'isDetailed',
+      'newProducts'
     ])
   },
   methods: {
