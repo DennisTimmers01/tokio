@@ -9,9 +9,14 @@ const swipeHandler = (ctx, direction) => {
   }
 }
 
+const clickNextItem = ctx => ctx.commit('selectNextItem')
+const clickPreviousItem = ctx => ctx.commit('selectPreviousItem')
+
 const toggleDetailed = ctx => ctx.commit('toggleDetailed')
 
 export {
   swipeHandler,
-  toggleDetailed
+  toggleDetailed,
+  clickNextItem,
+  clickPreviousItem
 }

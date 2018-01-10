@@ -1,9 +1,9 @@
 <template>
     <div :class="['product', isDetailed ? 'product--detailed' : '']">
       <div class="product__carousel" v-touch:swipe="swipeHandler">
-        <product-previous v-show="!isDetailed"/>
+        <product-previous @click.native="clickPreviousItem" v-show="!isDetailed"/>
         <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
-        <product-next v-show="!isDetailed"/>
+        <product-next @click.native="clickNextItem" v-show="!isDetailed"/>
       </div>
       <div class="product__info">
         <h2 class="product__brand">{{activeProduct.brand}}</h2>
@@ -18,8 +18,8 @@
         <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
           Order
         </nuxt-link>
+        <nuxt-child/>
       </div>
-      <nuxt-child/>
     </div>
 </template>
 
@@ -41,7 +41,9 @@ export default {
   methods: {
     ...mapActions([
       'swipeHandler',
-      'toggleDetailed'
+      'toggleDetailed',
+      'clickNextItem',
+      'clickPreviousItem'
     ])
   }
 }
@@ -58,6 +60,7 @@ export default {
       vertical-align: middle;
       max-width: 80%;
       margin: 0 auto;
+      cursor: pointer;
 
       &--previous {
         margin-left: -40%;
