@@ -42,4 +42,11 @@ export default {
       opacity: 0;
     }
   }
+
+  @media screen and (min-width: 32em) {
+    .count-down--detailed {
+      bottom: 100%;
+      transform: translateY(1.1em);
+    }
+  }
 </style>
