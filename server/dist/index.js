@@ -12,6 +12,10 @@ var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
+var _helmet = require('helmet');
+
+var _helmet2 = _interopRequireDefault(_helmet);
+
 var _productRoutes = require('./routes/productRoutes');
 
 var _productRoutes2 = _interopRequireDefault(_productRoutes);
@@ -19,7 +23,7 @@ var _productRoutes2 = _interopRequireDefault(_productRoutes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // connection to mongoDB
-_mongoose2.default.connect('mongodb://localhost/tokioAPI', { useMongoClient: true });
+_mongoose2.default.connect('mongodb://localhost:27017/tokioAPI', { useMongoClient: true });
 _mongoose2.default.Promise = global.Promise;
 
 // initiate express app
@@ -27,6 +31,7 @@ const app = (0, _express2.default)();
 const port = process.env.PORT || 3000;
 
 // Set up middleware
+app.use((0, _helmet2.default)());
 app.use(_bodyParser2.default.urlencoded({ extended: true }));
 app.use(_bodyParser2.default.json());
 

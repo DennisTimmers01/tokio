@@ -12,7 +12,7 @@ gulp.task('server', () =>
   nodemon({
     script: 'dist/index.js',
     ext: 'js',
-    env: { PORT: 8000 },
+    env: { PORT: 8080 },
     ignore: ['./node_modules/**']
   })
 )

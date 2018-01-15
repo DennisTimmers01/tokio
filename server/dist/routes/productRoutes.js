@@ -14,6 +14,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const productRouter = (0, _express.Router)();
 
+productRouter.use('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 productRouter.route('/').get(async (req, res) => {
   try {
     const products = await _productModel2.default.find({});

@@ -3,6 +3,11 @@ import Product from '../models/productModel'
 
 const productRouter = Router()
 
+productRouter.use('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  next()
+})
+
 productRouter.route('/')
   .get(async (req, res) => {
     try {
