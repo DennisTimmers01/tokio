@@ -15,7 +15,7 @@ export default {
     productView
   },
   async fetch ({store}) {
-    const { data } = await axios.get('http://localhost:8000/api/products/')
+    const { data } = await axios.get('http://localhost:8080/api/products/')
     store.commit('setProducts', data)
   }
 }
