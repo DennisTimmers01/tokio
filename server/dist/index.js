@@ -20,6 +20,10 @@ var _productRoutes = require('./routes/productRoutes');
 
 var _productRoutes2 = _interopRequireDefault(_productRoutes);
 
+var _appointmentRoutes = require('./routes/appointmentRoutes');
+
+var _appointmentRoutes2 = _interopRequireDefault(_appointmentRoutes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // connection to mongoDB
@@ -37,6 +41,7 @@ app.use(_bodyParser2.default.json());
 
 // Set up routes
 app.use('/api/products', _productRoutes2.default);
+app.use('/api/appointments', _appointmentRoutes2.default);
 
 // listen to port 8000 or 3000
 app.listen(port);
