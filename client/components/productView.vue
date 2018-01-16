@@ -1,5 +1,5 @@
 <template>
-    <div :class="['product', isDetailed ? 'product--detailed' : '']">
+    <div class="product">
       <div class="product__carousel" v-touch:swipe="swipeHandler">
         <product-previous @click.native="clickPreviousItem" v-show="!isDetailed"/>
         <img :src="activeProduct.img" alt="Product image" class="product__image product__image--active">
@@ -8,17 +8,8 @@
       <div class="product__info">
         <h2 class="product__brand">{{activeProduct.brand}}</h2>
         <h1 class="product__title">{{activeProduct.title}}</h1>
-        <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/${activeProduct.id}`" v-if="!isDetailed">
-          Details
-        </nuxt-link>
-        <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
-          Details
-        </nuxt-link>
-        <nuxt-link class="btn" @click.native="toggleDetailed" :to="`/order`" v-if="!isDetailed">Order</nuxt-link>
-        <nuxt-link class="btn" @click.native="toggleDetailed" :to="'/'" v-else>
-          Order
-        </nuxt-link>
-        <nuxt-child/>
+        <nuxt-link class="btn" :to="`/product/${activeProduct.id}`">Details</nuxt-link>
+        <nuxt-link class="btn" :to="`/order/${activeProduct.id}`">Order</nuxt-link>
       </div>
     </div>
 </template>
