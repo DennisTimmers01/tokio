@@ -22,7 +22,7 @@ appointmentRouter.route('/')
     try {
       const newAppointment = await new Appointment(req.body)
       await newAppointment.save()
-      res.status(200).send(newAppointment)
+      res.status(200).redirect('back').send(newAppointment)
     } catch (err) {
       res.send(err)
     }

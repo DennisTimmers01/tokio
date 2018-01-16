@@ -1,24 +1,22 @@
 import mongoose, { Schema } from 'mongoose'
 
 const appointmentSchema = new Schema({
-  name: {
-    first: {
-      type: String,
-      required: 'Please enter your first name.'
-    },
-    last: {
-      type: String,
-      required: 'Please enter your last name.'
-    }
+  firstname: {
+    type: String,
+    required: 'Please enter your first name.'
+  },
+  lastname: {
+    type: String,
+    required: 'Please enter your last name.'
   },
   email: {
     type: String,
     required: 'Please enter your email adress.'
   },
-  phone: {
+  phone_number: {
     type: Number
   },
-  date: {
+  pickup_date: {
     type: Date
   }
 })

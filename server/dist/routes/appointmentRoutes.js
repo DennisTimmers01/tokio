@@ -30,7 +30,7 @@ appointmentRouter.route('/').get(async (req, res) => {
   try {
     const newAppointment = await new _appointmentModel2.default(req.body);
     await newAppointment.save();
-    res.status(200).send(newAppointment);
+    res.status(200).redirect('back').send(newAppointment);
   } catch (err) {
     res.send(err);
   }
