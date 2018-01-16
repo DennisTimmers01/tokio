@@ -20,6 +20,7 @@ const previousProduct = state => {
 }
 
 const newProducts = state => state.newProducts
+const getAppointments = state => state.appointments
 
 export {
   activeItem,
@@ -28,5 +29,6 @@ export {
   nextProduct,
   previousProduct,
   isDetailed,
-  newProducts
+  newProducts,
+  getAppointments
 }

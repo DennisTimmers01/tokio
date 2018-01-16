@@ -17,10 +17,12 @@ const selectPreviousItem = (state) => {
 const toggleDetailed = (state) => (state.isDetailed = !state.isDetailed)
 
 const setProducts = (state, payload) => (state.newProducts = payload)
+const setAppointments = (state, payload) => (state.appointments = payload)
 
 export {
   selectNextItem,
   selectPreviousItem,
   toggleDetailed,
-  setProducts
+  setProducts,
+  setAppointments
 }

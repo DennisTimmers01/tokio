@@ -2,6 +2,7 @@ const state = {
   activeItem: 0,
   isDetailed: false,
   newProducts: [],
+  appointments: [],
   products: [
     {
       id: 0,
