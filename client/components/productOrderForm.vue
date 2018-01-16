@@ -1,7 +1,7 @@
 <template>
   <div class="orderform">
     <h1>Complete your reservation</h1>
-    <form action="http://localhost:8080/api/appointments" method="POST">
+    <form action="https://mighty-springs-21403.herokuapp.com/api/appointments" method="POST">
       <ul>
         <li>
           <label for="firstname">First name</label>
@@ -24,6 +24,11 @@
           <input type="date" id="orderdate" name="pickup_date" min="2018-01-08" max="2018-01-16" required>
         </li>
         <li>
+          <input type="hidden" name="product_name"  :value="activeProduct.title">
+          <input type="hidden" name="product_brand"  :value="activeProduct.brand">
+          <input type="hidden" name="product_price"  :value="activeProduct.price">
+        </li>
+        <li>
           <button class="btn" type="submit">Submit</button>
         </li>
       </ul>
@@ -32,7 +37,14 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters([
+      'activeProduct'
+    ])
+  }
+}
 </script>
 
 <style lang="scss" scoped>

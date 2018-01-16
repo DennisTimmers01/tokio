@@ -18,7 +18,7 @@ import axios from 'axios'
 import { mapGetters } from 'vuex'
 export default {
   async fetch ({store}) {
-    const { data } = await axios.get('http://localhost:8080/api/appointments')
+    const { data } = await axios.get('https://mighty-springs-21403.herokuapp.com/api/appointments')
     store.commit('setAppointments', data)
   },
   computed: {
