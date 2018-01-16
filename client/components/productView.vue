@@ -44,9 +44,15 @@ export default {
 
 <style lang='scss'>
   .product {
-    padding: 5em 1em 0 1em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     transition: all .7s ease-in-out;
     overflow: hidden;
+
+    &__info {
+      padding: 0 1em;
+    }
 
     &__image {
       display: inline-block;
@@ -89,8 +95,11 @@ export default {
     width: 5em;
   }
 
-  @media screen and (min-width: 32em) {
+  @media screen and (min-width: 54em) {
     .product {
+      left: 50%;
+      transform: translate(-50%, -50%);
+
       &__carousel {
         display: flex;
         flex-direction: row;
