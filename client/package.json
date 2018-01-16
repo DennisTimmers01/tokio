@@ -13,7 +13,6 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@tweenjs/tween.js": "^17.1.1",
     "axios": "^0.17.1",
     "nuxt": "^1.0.0-rc11",
     "vue-moment": "^3.1.0",

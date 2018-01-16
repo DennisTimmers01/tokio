@@ -33,10 +33,10 @@ module.exports = {
       }
     },
 
-    vendor: ['vue2-touch-events', '@tweenjs/tween.js', 'moment']
+    vendor: ['vue2-touch-events', 'moment']
   },
 
   css: ['@/assets/normalize.css', '@/static/css/all.scss'],
 
-  plugins: ['@/plugins/vue2-touch-events.js', '@/plugins/tween.js', '@plugins/moment']
+  plugins: ['@/plugins/vue2-touch-events.js', '@plugins/moment']
 }
